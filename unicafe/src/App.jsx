@@ -4,6 +4,13 @@ import { useState } from 'react'
 const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
 
 const Statistics = ( props ) => {
+  if (props.all === 0) {
+    return (
+      <div>
+        <p>No feedback given</p>
+      </div>
+    )
+  }
   return (
     <div>
       <p>good {props.good}</p>
@@ -39,7 +46,7 @@ const App = () => {
       bad={bad}
       all={all}
       average={average}
-      posotive={posotive} />
+      posotive={posotive}/>
     </div>
   )
 }
